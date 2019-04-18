@@ -1,6 +1,27 @@
 @charset "UTF-8";
+html{
+	background-color: pink;
+	font-size: 20px;
+
+
+}
+li{
+	background-color: blue;
+	font-style:italic;
+}
 h1{
 	text-align: center;
+	color: red;
+	text-shadow: 1px 1px black;
+	}
+#banner{
+	font-size: 25px;
+	font-weight: bolder;
+	color: blue;
+}
+.detail{
+	background-color: yellow;
+	font-size: 15px;
 }
 /**
  * 
