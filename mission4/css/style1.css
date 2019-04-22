@@ -1,0 +1,24 @@
+ul{
+	padding-left: 0px;
+}
+li{
+	list-style-type: none;
+	display: inline-block;
+	margin-right: 30px;
+}
+p{
+	margin: 0px;
+}
+.s_label{
+	margin-top: 20px;
+}
+strong{
+	margin-right: 8px;
+}
+
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2019-04-20 13:25:18
+ * @version $Id$
+ */
