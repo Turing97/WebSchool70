@@ -1,0 +1,32 @@
+@charset "UTF-8";
+#father {
+	padding: 0px;
+	/*position: relative;*/
+
+	width: 100%;
+	height: 100%;
+	background-color: yellow;
+}
+#left {
+	float: left;
+	height: 300px;
+	max-width: 300px;
+	min-width: 300px;
+	background-color: red;
+}
+#right {
+
+    /*float+margin-left: */
+/*	margin-left: 300px;*/
+	/*推荐使用bfc：*/
+	overflow:hidden;
+	height: 200px;
+	
+	background-color: blue;
+}
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2019-04-25 22:34:13
+ * @version $Id$
+ */

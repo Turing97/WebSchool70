@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+#father{
+	padding: 0px;
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	clear: both;
+	background-color: red;
+}
+#left{
+	padding: 0px;
+	margin: 0px;
+	width: 30%;
+	height: 150px;
+	float: left;
+	background-color: yellow;
+}
+#right{
+	padding: 0px;
+	margin: 0;
+	width: 70%;
+	height: 200px;
+	float: right;
+	background-color: blue;
+}
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2019-04-25 15:12:20
+ * @version $Id$
+ */

@@ -1,0 +1,39 @@
+
+#father{
+	border-style: solid;
+	border-width: 0px;
+	
+	top: 0px;
+	
+	right: 5%;
+	
+	margin: 0px;
+	padding: 0px;
+    position: absolute;
+	background-color: yellow;
+	width: 90%;
+	height: 300px;
+}
+#left{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 30%;
+	height: 200px;
+	background-color: blue;
+}
+#right{
+	background-color: red;
+	position: absolute;
+	top: 0px;
+	left: 30%;
+	width:70%;
+	height: 200px;
+}
+
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2019-04-25 15:25:05
+ * @version $Id$
+ */

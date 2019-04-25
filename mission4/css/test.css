@@ -1,0 +1,50 @@
+#father{
+	position: relative;
+	overflow: hidden;
+
+	
+	background-color:yellow;
+	
+
+}
+.clearfix:after{
+	content:".";
+	display:block;
+	clear:both;
+	height:0;
+	overflow:hidden;
+	visibility:hidden;
+}
+/*#clearfix: after{
+	content: "#";display: block;
+}*/
+#left{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	/*float: right;*/
+	width: 45%;
+	background-color: red;
+}
+
+#left_warp{
+	float: left;
+	
+	width: 45%;
+	
+	
+	
+}
+#right{
+	float: right;
+	width: 45%;
+	height: 100px;
+	background-color: blue;
+}
+
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2019-04-24 08:16:53
+ * @version $Id$
+ */
