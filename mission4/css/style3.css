@@ -6,16 +6,19 @@
  * @version $Id$
  */
  #total{
+ 	background-color: red;
  	width: 80%;
  	height: 100%;
  	text-align: auto;
  	margin: auto;
  }
  .title_banner{
- 	width: 100%;
+ 	width: 80%;
  	height: 50px;
+ 	text-align: auto;
+ 	margin: auto;
  	background-color: red;
- 	text-align: 0px;
+ 	
  }
  #content{
  	width: 80%;

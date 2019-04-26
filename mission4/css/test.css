@@ -1,50 +1,72 @@
-#father{
-	position: relative;
-	overflow: hidden;
-
-	
-	background-color:yellow;
-	
-
-}
-.clearfix:after{
-	content:".";
-	display:block;
-	clear:both;
-	height:0;
-	overflow:hidden;
-	visibility:hidden;
-}
-/*#clearfix: after{
-	content: "#";display: block;
-}*/
-#left{
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	/*float: right;*/
-	width: 45%;
-	background-color: red;
+html {
+  font-family: sans-serif;
 }
 
-#left_warp{
-	float: left;
-	
-	width: 45%;
-	
-	
-	
-}
-#right{
-	float: right;
-	width: 45%;
-	height: 100px;
-	background-color: blue;
+* {
+  box-sizing: border-box;
 }
 
-/**
- * 
- * @authors Your Name (you@example.org)
- * @date    2019-04-24 08:16:53
- * @version $Id$
- */
+body {
+  margin: 0;
+}
+.info-box {
+  width: 450px;
+  height: 400px;
+  position: fixed;
+  top: 0;
+}
+.info-box ul {
+  padding-left: 0;
+  margin-top: 0;
+}
+
+.info-box li {
+  float: left;
+  list-style-type: none;
+  width: 150px;
+}
+
+.info-box li a {
+  display: inline-block;
+  text-decoration: none;
+  width: 100%;
+  line-height: 3;
+  background-color: red;
+  color: black;
+  text-align: center;
+}
+
+.info-box li a:focus, .info-box li a:hover {
+  background-color: #a60000;
+  color: white;
+}
+
+.info-box li a.active {
+  background-color: #a60000;
+  color: white;
+}
+.info-box .panels {
+  height: 352px;
+  position: relative;
+  clear: both;
+}
+.info-box article {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 352px;
+  padding: 10px;
+  color: white;
+  background-color: #a60000;
+}
+
+.info-box .active-panel {
+  z-index: 1;
+}
+.fake-content{
+	background-color: #a60000；
+	color:white;
+	padding: 10px;
+	height: 2000px;
+	margin-left: 470px;
+}

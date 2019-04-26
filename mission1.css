@@ -8,6 +8,10 @@ html{
 li{
 	background-color: blue;
 	font-style:italic;
+
+}
+ul{
+	list-style: square;
 }
 h1{
 	text-align: center;
