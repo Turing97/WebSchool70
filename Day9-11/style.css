@@ -1,0 +1,181 @@
+@charset "UTF-8";
+
+.content {
+	margin:auto;
+	width: 100%;
+	max-width:1440px;
+	height: auto;	
+}
+.main_content {
+
+
+	margin: auto;
+	width: 100%;
+	max-width: 1440px;
+	height: auto;
+	
+}
+#title_img {
+	display: table-cell;
+    vertical-align: middle;
+	width: 1440px;
+	height: 700px;
+	margin: auto;
+	background-image: url(images/前端学院设计图_01.png);
+	-moz-background-size:100% 100%;
+	background-size:100% 100%;
+	background-repeat:no-repeat;
+}
+#title {
+	text-align: center;
+	margin: auto;
+}
+
+/*part two*/
+#second {
+	text-align: center;
+	display: table-cell;
+    vertical-align: middle;
+	width: 1440px;
+	height: 100%;
+	margin: auto;
+	background-color: white;
+}
+#second_content {
+	margin:auto;
+	width: 60%;
+	height: 100%;
+	
+	overflow:hidden;
+}
+#second p,strong {
+	color: black;
+}
+
+#second_content div {
+
+	height: 150px;
+	width: 41%;
+	margin-left: 6%;
+	float: left;
+	
+	margin-top: 10px;
+}
+#fiuid_tyography {
+	clear: both;
+}
+#second_content p,strong {
+	color: black;
+}
+
+/*thrid_part*/
+#thrid {
+	width: 1440px;
+	height: 800px;
+	background-image: url(images/前端学院设计图_04.png); 
+	display: table-cell;
+    vertical-align: middle;
+	margin: auto;
+	-moz-background-size:100% 100%;
+	/*background-size:100% 100%;*/
+	/*background-repeat:no-repeat;*/
+}
+#thrid_content {
+	margin-left: 20%;
+	height: 70%;
+	width: 40%;
+}
+#thrid_content button {
+	margin-right: 20px;
+	margin-top: 50px;
+	box-sizing: border-box;
+  	text-align:center;
+  	font-size:0.8em;
+  	height:4em;
+  	border-radius:2px;
+  	border:1px solid grey;
+  	-webkit-transition-duration: 0.4s;
+  	transition-duration: 0.4s;
+  	cursor: pointer;
+  	-web-kit-appearance:none;
+  	-moz-appearance: none;
+  	background-color: transparent;	
+}
+
+
+#thrid_content button:hover {
+	background-color: white;
+    color: black;
+}
+
+
+/*forth prat*/
+#forth {
+	text-align: center;
+	display: table-cell;
+    vertical-align: middle;
+	width: 1440px;
+	height: 100%;
+	margin: auto;
+	
+}
+#forth p,strong {
+	color: black;
+}
+#forth_content {
+	padding-left: 15%;
+	padding-right: 15%;
+	width: 70%;
+	height: 100%;
+	overflow: hidden;
+	
+}
+#forth_content div {
+	margin-left: 3%;
+	width: 30%;
+	height: 300px;
+	float: left;
+}
+
+
+p,strong {
+	color: white;
+}
+strong p {
+	font-size: 30px;
+}
+p {
+	font-size: 15px;
+}
+
+#login_signin {
+	margin: auto;
+	width: 700px;
+	height: 200px;
+	border:1px solid grey;
+}
+
+input,button{
+  box-sizing: border-box;
+  text-align:center;
+  font-size:1em;
+  height:1.5em;
+  border-radius:4px;
+  border:1px solid grey;
+  
+  -web-kit-appearance:none;
+  -moz-appearance: none;
+  
+ }
+ input {
+ 	background-color: transparent;
+ }
+/*input[type="text"]:focus{
+  border:1px solid #ff7496;
+}*/
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2019-05-03 18:12:11
+ * @version $Id$
+ */
