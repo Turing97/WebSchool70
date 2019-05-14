@@ -98,10 +98,24 @@
 	
 	</div>
 	<script type="text/javascript">
+		window.onload = function(){
+			
+			console.log("nihao ")
+			var date = new Date();
+			var hour = date.getHours();
+			if(hour>12){
+				alert("下午好！！")
+			}
+			else{
+				alert("上午好");
+			}
+		}
 		function hobby() {
 			console.log("鸡你太美！！！！")
 			// body...
 		}
+
+		
 	</script>
 	
 
