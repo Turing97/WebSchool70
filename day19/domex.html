@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">    
+    <title>IFE ECMAScript</title>
+</head>
+<body>        
+    <div id="wrapper">
+        <div id="news-top" class="section">
+            <h3>Some title</h3>
+            <div class="content">
+                <ul>
+                    <li><span>HTML</span><a href="">Some Link1</a></li>
+                    <li><span>JS</span><a class="active" href="">Some Link2</a></li>
+                    <li><span>CSS</span><a href="">Some Link3</a></li>
+                    <li><span>JS</span><a href="">Some Link4</a></li>
+                </ul>
+            </div>
+            <img src="">
+            <p class="">Some Text</p>
+        </div>
+        <div id="news-normal" class="section">
+            <h3>Some title</h3>
+            <div class="content">
+                <ul>
+                    <li><span>HTML</span><a href="">Some Link1</a></li>
+                    <li><span>HTML</span><a href="">Some Link2</a></li>
+                    <li><span>JS</span><a class="active" href="#">Some Link3</a></li>
+                    <li><span>CSS</span><a href="">Some Link4</a></li>
+                </ul>
+            </div>
+            <img src="">
+            <p class="">Some Text</p>
+        </div>      
+    </div>
+    <script>
+    console.log(getAllListItem());
+    console.log(getAllListItem1());
+    console.log(findAllHtmlSpanInOneSection("news-top"));
+    console.log(findAllHtmlSpanInOneSection1("news-top"));
+    console.log(findListItem("news-top","HTML"));
+    console.log(findListItem1("news-top","HTML"));
+    console.log(getActiveLinkContent("news-top"));
+    console.log(getActiveLinkContent1("news-top"));
+    function getAllListItem() {
+        // 返回页面中所有li标签
+        var lis = document.getElementsByTagName("li");
+        return lis;
+    }
+    function getAllListItem1() {
+        // 返回页面中所有li标签
+        var lis = document.querySelectorAll('li')
+        return lis;
+    }
+
+    function findAllHtmlSpanInOneSection(sectionId) {
+        // 返回某个section下所有span中内容为HTML的span标签
+        var sec = document.getElementById(sectionId);
+        
+        var ht = sec.getElementsByTagName("span");
+        var spanres = [];
+        for(let i = 0;i<ht.length;i++){
+            if(ht[i].innerHTML=== "HTML"){
+                spanres.push(ht[i]);
+            }
+        }
+        return spanres;
+    }
+    function findAllHtmlSpanInOneSection1(sectionId){
+        var sec = document.getElementById(sectionId);
+        
+        var ht = sec.querySelectorAll('span');
+        let spanres = [];
+        for(let i = 0; i<ht.length; i++){
+            if(ht[i].innerHTML === "HTML"){
+                spanres.push(ht[i]);
+            }
+        }
+        return spanres;
+    }
+
+    function findListItem(sectionId, spanCont) {
+        // 返回某个section下，所有所包含span内容为spanCont的LI标签
+        var sec = document.getElementById(sectionId);
+        var ht = sec.getElementsByTagName("span");
+        var lires = [];
+        for(let i = 0; i<ht.length; i++){
+            if(ht[i].innerHTML === spanCont){
+                lires.push(ht[i].parentNode);
+            }
+        }
+        return lires;
+    }
+    function findListItem1(sectionId, spanCont) {
+        var sec = document.getElementById(sectionId);
+        var ht = sec.querySelectorAll('li span');
+        var lires = [];
+        for(let i = 0;i<ht.length;i++){
+            if(ht[i].innerHTML === spanCont){
+                lires.push(ht[i].parentNode);
+            }
+        }
+        return lires;
+
+    }
+    function getActiveLinkContent(sectionId) {
+        // 返回某个section下，class为active的链接中包含的文字内容
+        var sec = document.getElementById(sectionId);
+        var as = sec.getElementsByTagName("a");
+        var res = [];
+        for(let i = 0;i<as.length;i++){
+            if(as[i].className == "active"){
+                res.push(as[i]);
+            }
+        }
+        return res;
+    }
+    function getActiveLinkContent1(sectionId) {
+      var sec = document.getElementById(sectionId);
+        var ht = sec.querySelector('a.active');
+        var agg=[];
+        return ht.innerHTML; 
+    }
+
+    </script>
+</body>
+</html>
