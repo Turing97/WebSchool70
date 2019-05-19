@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+	<input id="name" type="text">    
+	<button id="submit-btn">Submit</button>
+
+	<script type="text/javascript">
+		document.getElementById("submit-btn").onclick=function (e) {
+			let name = document.querySelector('#name');
+			// body...
+			console.log(name.value);
+		}
+		document.onkeydown = function(evt){
+			var e = evt || window.evt;
+			if(e && e.keyCode === 13) {
+				let name = document.querySelector('#name');
+				console.log(name.value);
+			}
+			if(e && e.keyCode === 27){
+				let name = document.querySelector('#name');
+				name.value = "";
+			}
+		}
+
+	</script>
+    
+</body>
+</html>
