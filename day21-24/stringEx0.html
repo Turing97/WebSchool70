@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+    <div >
+    <label>String A:
+        <input id="radio-a" type="radio" checked="true" name="str-obj" value="a">
+    </label>
+    <textarea id="str-a"></textarea>
+    <label>String B:
+        <input id="radio-b" type="radio" name="str-obj" value="b">
+    </label>
+    <textarea id="str-b"></textarea>        
+    <label>Num A：<input id="num-a" type="number" value="0"></label>
+    <label>Num B：<input id="num-b" type="number" value="1"></label>
+</div>
+<div id="btnContent">
+    <button id="strLen">获取当前选中输入的内容长度</button>
+    <button id="str3">当前选中输入中的第3个字符</button>
+    <button id="concat">把两个输入框的文字连接在一起输出（concat）</button>
+    <button id="indexFun">输入B中的内容，在输入A的内容中第一次出现的位置（indexOf）</button>
+    <button id="lastIndexFun">输入A中的内容，在输入B的内容中最后一次出现的位置（lastIndexOf）</button>
+    <button id="sliceFun">使用slice获取选中输入框内容的部分内容，参数为num-a及num-b</button>
+    <button id="textareaLines">当前选中输入框的行数</button>
+    <button id="subStrFun">使用substr获取选中输入框内容的子字符串，参数为num-a及num-b</button>
+    <button id="Upper">把所选输入框中的内容全部转为大写</button>
+    <button id="Lower">把所选输入框中的内容全部转为小写</button>
+    <button id="trimS">把所选输入框中内容的半角空格全部去除</button>
+    <button id="replace">把所选输入框中内容的a全部替换成另外一个输入框中的内容</button>
+</div>
+<p id="result"></p>
+<script type="text/javascript">
+	var btn_content = document.querySelector("#btnContent");
+	btn_content.addEventListener("click",function(e){
+		var str1 = document.querySelector("#str-a").value;
+		var str2 = document.querySelector("#str-b").value;
+		var num_a = parseInt(document.querySelector("#num-a").value);
+		console.log(num_a)
+		var num_b = document.querySelector("#num-b").value;
+		var res = document.querySelector("#result")
+		var radio_a = document.querySelector("#radio-a");
+		var radio_b = document.querySelector("#radio-b");
+		switch(e.target.id){
+			case "strLen":
+			strLen(str1,res);
+			break;
+			case "str3":
+			str3(str1,res);
+			break;
+			case "concat":
+			concatStr(str1,str2,res);
+			break;
+			case "indexFun":
+			indexFun(str1,str2,res);
+			break;
+			case "lastIndexFun":
+			lastIndexFun(str1,str2,res);
+			break;
+			case "sliceFun":
+			sliceFun(str1,num_a,num_b,res);
+			break;
+			case "textareaLines":
+			textareaLines(str1,str2,radio_a,radio_b,res);
+			break;
+			case "subStrFun":
+			subStrFun(str1,num_a,num_b,res);
+			break;
+			case "Upper":
+			Upper(str1,str2,radio_a,radio_b,res);
+			break
+			case "Lower":
+			Lower(str1,str2,radio_a,radio_b,res);
+			break;
+			case "trimS":
+			trimS(str1,str2,radio_a,radio_b,res)
+			break;
+			case "replace":
+			replace(str1,str2,radio_a,radio_b,res)
+			break;
+		}
+			
+		
+	})
+	//字符长度
+	function strLen(str,res) {
+		console.log(str.length)
+		res.innerHTML = "该字符串的长度为："+str.length;
+
+	}
+	//提取某个字符
+	function str3(str,res) {
+		res.innerHTML = "该字符串第三个字符为："+str[2];
+	}
+	//连接字符串
+	function concatStr(s,s2,res){
+		res.innerHTML = s.concat(s2);
+	}
+	//第一次出现的位置
+	function indexFun(s1,s2,res) {
+		if(s1.indexOf(s2) ===-1){
+			res.innerHTML = "字符串a中不包含字符b！！"
+		}
+		else{
+			res.innerHTML = "字符b出现在字符串a中的位置为："+(s1.indexOf(s2)+1);
+		}
+		
+	}
+	//从最后一次字符串出现的位置
+	function lastIndexFun(s1,s2,res) {
+		if(s1.lastIndexOf(s2) ===-1){
+			res.innerHTML = "字符串a中不包含字符b！！"
+		}
+		else{
+			res.innerHTML = "字符b最后出现在字符串a中的位置为："+(s1.lastIndexOf(s2)+1);
+		}
+	}
+	//使用slice获取部分输入框内容
+	function sliceFun(s1,num1,num2,res){
+		console.log("点击事件已捕获")
+		res.innerHTML = s1.slice(num1,num2);
+	}
+	//文本区域行数
+	function textareaLines(s1,s2,r1,r2,res) {
+		if(r1.checked){
+			console.log("ra被选中")
+		}
+		else{
+			console.log("rb被选中")
+		}
+	}
+	function subStrFun(s1,num1,num2,res){
+		console.log("点击事件已捕获")
+		res.innerHTML = s1.substr(num1,num2);
+	}
+	//转换成大写
+	function Upper(s1,s2,ra,rb,res){
+		if(ra.checked){
+			res.innerHTML = s1.toUpperCase();
+		}
+		else{
+			res.innerHTML = s2.toUpperCase();
+		}
+		
+	}
+	//转换成小写
+	function Lower(s1,s2,ra,rb,res){
+		if(ra.checked){
+			res.innerHTML = s1.toLowerCase();
+		}
+		else{
+			res.innerHTML = s2.toLowerCase();
+		}
+		
+	}
+	//去掉选中字符串的空格
+	function trimS(s1,s2,ra,rb,res){
+		if(ra.checked){
+			res.innerHTML = s1.replace(/\s/g, "")
+		}
+		else{
+			res.innerHTML = s2.replace(/\s/g, "")
+		}
+		
+	}
+	//将选中的字符串替换成剩余的字符串内容
+	function replace(s1,s2,ra,rb,res){
+		if(ra.checked){
+			document.querySelector('#str-a').value = s2;
+		}
+		else{
+			document.querySelector('#str-b').value = s1;
+		}
+		
+	}
+
+</script>
+</body>
+</html>
