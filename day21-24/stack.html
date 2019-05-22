@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+<input id="stack-input" type="text">
+<p id="stack-cont">栈内容：apple-&gt;pear</p>    
+<button id="push-btn">进栈</button>
+<button id="pop-btn">退栈</button>
+<button id="font-btn">打印栈顶元素内容</button>
+<button id="empty-btn">判断栈是否为空</button>
+
+<script>
+
+var queue = ["apple", "pear"];
+var parameter = document.querySelector("#stack-input");
+var res = document.querySelector("#stack-cont");
+var bts = document.querySelectorAll("button");
+bts[0].onclick = function pushFun() {
+	inputPar = parameter.value;
+	if(inputPar === ""){
+		console.log("请输入！！")
+		return
+	}
+	queue.push(inputPar);
+	console.log(queue)
+	res.innerHTML = "栈内容："+queue.join("->");
+	// body...
+}
+bts[1].onclick = function popFun(){
+	inputPar = parameter.value;
+	if(queue === null){
+		console.log("没有多余的元素！！")
+		return
+	}
+	queue.pop()
+	console.log(queue)
+	res.innerHTML = "栈列内容："+queue.join("->");
+}
+bts[2].onclick = function printFrist(){
+	inputPar = parameter.value;
+	if(queue === null){
+		console.log("栈中没有元素！！")
+		return
+	}
+	
+	console.log(queue)
+	res.innerHTML = "栈顶内容："+queue[0]
+}
+bts[3].onclick = function isNull(){
+	inputPar = parameter.value;
+	if(queue.length == 0){
+		res.innerHTML = "栈为空";
+		
+	}else{
+		res.innerHTML = "栈不为空"
+	}
+	
+}
+</script>
+    
+</body>
+</html>

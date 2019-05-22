@@ -17,19 +17,29 @@
 */
 function diyTrim(str) {
     var result = "";
-    var temp = "";
-    for(var i=0;i<str.length;i++){
-    	if(str[i]!==" "&&str[i]!==' '){
-    		temp = str.substring(i);
+    var a = str.split('');
+    var b = []
+    var j = 0;
+    //全角空格Unicode 12288
+    //半角空格unicode 32
+    for(var i = 0;i<str.length;i++){
+    	if(str.charCodeAt(i) !=32 && str.charCodeAt(i) !=12288){
+    		var temp = str.substring(i)
     		break;
     	}
-
     }
-    for(var i = temp.length;i>=0;i--){
-    	if(temp[i] !== " "){
-    		result = temp.substring(0,temp.length-i);
+    
+    if(temp === undefined){
+    	return ""
+    }
+  	for(var i = temp.length;i>=0; i--){
+  		if(temp.charCodeAt(i) !=32 && temp.charCodeAt(i) !=12288){
+    		result= temp.substring(i,-1)
+    		break;
     	}
-    }
+  	}
+
+    
 
     // do something
 
@@ -52,6 +62,21 @@ console.log(diyTrim('')); // ->
 */
 function removeRepetition(str) {
     var result = "";
+    result = result.concat(str[0]);
+    if (str == "") {
+    	return ""
+    }
+    for(var i = 1;i<str.length;i++){
+    	//下面代码是完全去重，字符串中没有一个相同的值
+    	// if(str.indexOf(str[i]) === i){
+    	// 	result = result.concat(str[i])
+    	// }
+    	//下面的代码时对连续数组去重
+    	if(str[i] !== str[i-1]){
+    		 result = result.concat(str[i]);
+    	}
+    }
+    
 
     // do something
 

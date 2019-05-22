@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+    <script type="text/javascript">
+    	var arr = [43, 54, 4, -4, 84, 100, 58, 27, 140];
+    	var arr1 = ['apple', 'dog', 'cat', 'car', 'zoo', 'orange', 'airplane'];
+    	var arr2 = [[10, 14], [16, 60], [7, 44], [26, 35], [22, 63]];
+    	var arr3 = [
+    		{
+        		id: 1,
+        		name: 'candy',
+        		value: 40
+    		}, {
+        		id: 2,
+        		name: 'Simon',
+        		value: 50
+    		}, {
+        		id: 3,
+        		name: 'Tony',
+        		value: 45
+    		}, {
+        		id: 4,
+        		name: 'Annie',
+        		value: 60
+    		}
+		];
+
+		function compare(a,b){
+			return a-b;
+		}
+		window.onload = function sortttt(){
+			console.log("数组一排序：")
+			console.log(arr.sort(compare))
+			console.log("数组二排序：")
+			console.log(arr1.sort())
+			console.log("数组三排序：")
+			console.log(arr2.sort(function(x,y) {
+				return x[1]-y[1];
+			}))
+			console.log(arr3.sort(function(x,y) {
+				return x.value-y.value;
+			}))
+		}
+
+
+
+    </script>
+</body>
+</html>

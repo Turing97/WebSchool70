@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+	<script type="text/javascript">
+		var scoreObject = {
+    		"Tony": {
+        	"Math": 95,
+        	"English": 79,
+        	"Music": 68
+    		}, 
+    		"Simon": {
+        	"Math": 100,
+        	"English": 95,
+        	"Music": 98
+    		}, 
+    		"Annie": {
+        	"Math": 54,
+        	"English": 65,
+        	"Music": 88
+    		}
+		}
+		window.onload = function() {
+			console.log(scoreObject)
+			console.log("对象转换为数组第一种方法："+Object.values(scoreObject))
+			var res = [];
+			for(var i in scoreObject){
+				res.push(scoreObject[i]);
+			}
+			console.log("对象转换为数组第二种方法："+res)
+		}
+	</script>
+    
+</body>
+</html>
