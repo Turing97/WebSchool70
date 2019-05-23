@@ -27,15 +27,52 @@
         	"Music": 88
     		}
 		}
+
+		var menuArr = [
+		    [1, "Area1", -1],
+		    [2, "Area2", -1],
+		    [3, "Area1-1", 1],
+		    [4, "Area1-2", 1],
+		    [5, "Area2-1", 2],
+		    [6, "Area2-2", 2],
+		    [7, "Area1-2-3", 4],
+		    [8, "Area2-2-1", 6],
+		];
 		window.onload = function() {
-			console.log(scoreObject)
-			console.log("对象转换为数组第一种方法："+Object.values(scoreObject))
-			var res = [];
-			for(var i in scoreObject){
-				res.push(scoreObject[i]);
+			var keys = Object.keys(scoreObject)
+			var values = Object.values(scoreObject);
+			var arr = []
+			for(var i in keys){
+				var tempArr=[]
+				tempArr.push(keys[i])
+				for(var j in values[i]){
+					tempArr.push(values[i][j])
+				}
+				
+				arr[i] = tempArr;
 			}
-			console.log("对象转换为数组第二种方法："+res)
+			console.log(arr)
+			console.log("\n")
+
+			var objectMenu = {};
+			
+			var count = 6
+			for(var i = menuArr.length-1;i>=0;i--){
+				if(menuArr[i][2] === 4 || menuArr[i][2] === 1 || menuArr[i][2] ===  -1){
+					var tempArr = {};
+					
+					tempArr.name = menuArr[i][1];
+					tempArr.subMenu = ""
+					console.log(tempArr)
+
+				}
+			}
+			
+			console.log(objectMenu)
+
+
 		}
+		
 	</script>
     
 </body>
