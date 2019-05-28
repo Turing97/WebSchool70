@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+	<select id="region-select">
+		<option value="华东">华东</option>
+		<option value="华北">华北</option>
+		<option value="华南">华南</option>
+	</select>
+	<select id="product-select">
+		<option value="手机">手机</option>
+		<option value="笔记本">笔记本</option>
+		<option value="智能音箱">智能音箱</option>
+	</select>
+	<script type="text/javascript">
+		let sourceData = [{
+		    product: "手机",
+		    region: "华东",
+		    sale: [120, 100, 140, 160, 180, 185, 190, 210, 230, 245, 255, 270]
+		}, {
+		    product: "手机",
+		    region: "华北",
+		    sale: [80, 70, 90, 110, 130, 145, 150, 160, 170, 185, 190, 200]
+		}, {
+		    product: "手机",
+		    region: "华南",
+		    sale: [220, 200, 240, 250, 260, 270, 280, 295, 310, 335, 355, 380]
+		}, {
+		    product: "笔记本",
+		    region: "华东",
+		    sale: [50, 60, 80, 110, 30, 20, 70, 30, 420, 30, 20, 20]
+		}, {
+		    product: "笔记本",
+		    region: "华北",
+		    sale: [30, 35, 50, 70, 20, 15, 30, 50, 710, 130, 20, 20]
+		}, {
+		    product: "笔记本",
+		    region: "华南",
+		    sale: [80, 120, 130, 140, 70, 75, 120, 90, 550, 120, 110, 100]
+		}, {
+		    product: "智能音箱",
+		    region: "华东",
+		    sale: [10, 30, 4, 5, 6, 5, 4, 5, 6, 5, 5, 25]
+		}, {
+		    product: "智能音箱",
+		    region: "华北",
+		    sale: [15, 50, 15, 15, 12, 11, 11, 12, 12, 14, 12, 40]
+		}, {
+		    product: "智能音箱",
+		    region: "华南",
+		    sale: [10, 40, 10, 6, 5, 6, 8, 6, 6, 6, 7, 26]
+		}]
+
+
+		
+		//地区选择时的change事件
+		var getRegion = document.querySelector("#region-select");
+		getRegion.onchange = function(){
+			//动态创建表格
+			createTable()
+			
+		}
+		//产品类型选择时的change事件
+		var getProduct = document.querySelector("#product-select");
+		getProduct.onchange = function() {
+
+
+			//动态创建表格
+			createTable()
+		}
+		//返回当前选取地区对应的数据
+		function getData() {
+			//取到现在对应的地区信息
+			var regionData = getRegion.value;
+			console.log("这里是regionData:"+regionData)
+			//取到现在的商品信息
+			var productData = getProduct.value;
+			console.log("这里是productData:"+productData);
+			var selected = [];
+			for(var i =0;i < sourceData.length; i++){
+				if(sourceData[i].region === regionData
+					 && sourceData[i].product === productData){
+					selected.push(sourceData[i])
+				}
+			}
+			return selected;
+		}
+
+
+		//动态创建表格
+		function createTable() {
+			var ta = document.body.getElementsByTagName('table')[0];
+			if(ta) {
+				ta.parentNode.removeChild(ta);
+			}
+// 21         	if(ta) {
+// 				ta.parentNode.removeChild(ta)
+// 			}
+		
+			var data = getData();
+			console.log("这里是所取出来的data"+data)
+			var table = document.createElement("table");
+			var tbody = document.createElement("tbody");
+			table.appendChild(tbody);
+			var caption = table.createCaption();
+			caption.innerHTML = data[0].region+"地区商品销售表";
+			var tr = tbody.insertRow(0);
+			var str = "商品,地区,一月,二月,三月,四月,五月,六月,七月,八月,九月,十月,十一月,十二月".split(",")
+			console.log("这是str"+str)
+			for(var i = 0; i < str.length; i++){
+				var th = document.createElement("th");
+				th.innerHTML = str[i];
+				tr.appendChild(th)
+			}
+			for(var i = 0; i < data.length; i++) {
+				var row = tbody.insertRow(i+1);
+				let th = document.createElement("th");
+
+				var idCell0 = document.createElement("th");
+				idCell0.innerHTML = data[i].product;
+				var idCell1 = document.createElement("th");
+				idCell1.innerHTML = data[i].region;
+				row.appendChild(idCell0);
+				row.appendChild(idCell1);
+				
+				for(var j=0; j<data[i].sale.length; j++) {
+					var idSales = document.createElement("td");
+					idSales.innerHTML = data[i].sale[j];
+					row.appendChild(idSales);
+				}
+			}
+			document.body.appendChild(table);
+		}
+	</script>
+		
+    
+</body>
+</html>

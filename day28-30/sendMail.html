@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style type="text/css">
+	input {
+		width: 200px;
+	}
+	ul{
+	list-style-type: none;
+	background-color: green;
+	margin:0; 
+	padding:0;
+	width: 200px;
+	
+
+	}
+	ul li{ 
+		 
+		display: block;
+		width: 200px;
+		margin-left: 0px;
+		padding-left: 0px;
+		background:#ccc; 
+	}
+	ul li:hover{
+	background:#999; 
+	}
+</style>
+</head>
+<body>
+	<div class="wrapper">
+    	<input id="email-input" type="text">
+    	<ul id="email-sug-wrapper" class="email-sug">
+    		
+    	</ul>
+	</div>
+    
+    <script type="text/javascript">
+
+    	// 邮箱后缀List参考
+		var postfixList = ['163.com', 'gmail.com', '126.com', 'qq.com', '263.net'];
+		var inputE = document.querySelector("#email-input");
+		var oUl = document.querySelector("#email-sug-wrapper");
+
+		//获取每次输入的事件  使用的是oninput
+		inputE.oninput = function inputDom(e) {
+			// var tem_value = "";
+			// tem_value = trim(inputE.value)
+			// inputE.value = tem_value
+			if(inputE.value === ""){
+				oUl.style.display = "none";
+			}
+			else{
+				oUl.style.display = "block";
+			}
+			dynamicCreateLi();
+
+			// body...
+		}
+
+		//去掉字符串首尾的空格trim
+		function trim(str){
+			var result = "";
+		    var a = str.split('');
+		    var b = []
+		    var j = 0;
+		    //全角空格Unicode 12288
+		    //半角空格unicode 32
+		    for(var i = 0;i<str.length;i++){
+		    	if(str.charCodeAt(i) !=32 && str.charCodeAt(i) !=12288){
+		    		var temp = str.substring(i)
+		    		break;
+		    	}
+		    }
+		    if(temp === undefined){
+		    	return ""
+		    }
+		  	for(var i = temp.length;i>0; i--){
+		  		if(temp.charCodeAt(i) !=32 && temp.charCodeAt(i) !=12288){
+		    		result= temp.substring(i,-1)
+		    		break;
+		    	}  		
+  			} 
+    	// do something
+    	return result
+	}
+		//去除字符串前后的空格并返回的值
+		function inputTextTrimed() {
+			var input_text = inputE.value;
+			var result = trim(input_text);
+			// inputE.value = result;
+			return result;
+		}
+
+		//动态生成li
+		function dynamicCreateLi() {
+			var lis = document.querySelectorAll("#email-sug-wrapper li");
+			for(var i = 0; i < lis.length; i++){
+				oUl.removeChild(lis[i])
+			}
+			//生成临时的数组以处理出现字符串@时的情况
+			var tempPostfixList =[];
+			//出现@
+			if(inputTextTrimed().indexOf("@") != -1){
+				//获取字符串中@出现的索引
+				var index = inputTextTrimed().indexOf("@")
+				//将@后面部分截取出来
+				var indexStr = inputTextTrimed().substring(index+1);
+				console.log("这里是indestr："+indexStr)
+				//将字符串@前部分截取出来
+				var trimedStr = inputTextTrimed().substring(index,-1)
+				
+				//判断原有枚举数组中和后半段字符串是否部分匹配
+				for(var i = 0; i < postfixList.length; i++){
+					//等号的右边是将枚举数组中的值截取部分长度，和当前的输入部分进行比较，匹配则将改值放入临时的数组中去
+					console.log(indexStr)
+					console.log(postfixList[i].substr(0,indexStr.length))
+					if(indexStr === postfixList[i].substr(0,indexStr.length)){
+						tempPostfixList.push(postfixList[i])	
+					}
+					
+				}
+				//遍历临时数组，动态生成li标签
+				for(var i = 0; i < tempPostfixList.length; i++){
+					var oLi = document.createElement("li");
+					oLi.innerHTML = trimedStr+"@"+tempPostfixList[i];
+					oUl.appendChild(oLi);
+
+				}
+				
+			}
+			//没有出现@的情况，使用枚举数组直接字符串拼接在后面
+			else{
+					for(var i = 0; i < postfixList.length; i++){
+					var oLi = document.createElement("li");
+					oLi.innerHTML = inputTextTrimed()+"@"+postfixList[i];
+					oUl.appendChild(oLi);
+				}
+			}
+		}
+		//为每个li添加点击事件，这里使用到了事件冒泡和捕获机制
+		oUl.addEventListener("click",function(e){
+			inputE.value = e.target.innerHTML;
+		})
+    </script>
+</body>
+</html>
