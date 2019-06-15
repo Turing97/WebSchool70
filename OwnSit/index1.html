@@ -15,6 +15,10 @@
             overflow: hidden;
         }
 
+        a:link{
+        	text-decoration:none;
+        }
+
         #container, .section {
             height: 100%;
         }
@@ -26,21 +30,21 @@
         }
 
         #section0 {
-            background-color: #FFFACD;
+            background-color: #FDF5E6;
         }
 
         #section1 {
-            background-color: #764d39;
+            background-color: #FFDAB9;
             margin: 0 auto;
 
         }
 
         #section2 {
-            background-color: #ff9000;
+            background-color: #FFB90F;
         }
 
         #section3 {
-            background-color: #380d31;
+            background-color: #B2DFEE;
         }
         #part1 {
 		 	text-align: left;
@@ -109,7 +113,7 @@
  		#part2 div{
  			
  			height: 300px;
- 			background-color: #EEE8AA;
+ 			background-color: #F5F5DC;
  			width: 60%;
  			margin: 0 auto;
  			text-align: center;
@@ -129,14 +133,14 @@
 		#who h2 {
 			font-family: 华文新魏;
 			font-size: 30px;
-			color: #CDC0B0;
+			color: #A9A9A9;
 			margin-bottom: 40px;
 		}
 		#who p {
 			font-family: 隶书;
 			text-decoration: none;
-			font-size: 20px;
-			color: #CDC0B0;
+			font-size: 25px;
+			color: #B0C4DE;
 		}
 		#who a {
 			text-decoration: none;
@@ -157,7 +161,7 @@
 			
 			
 			padding-left: 20%;
-			padding-top: 30%;
+			padding-top: 15%;
 
 			
 		}
@@ -386,7 +390,10 @@
         	
         	height: 350px;
         	width:600px;
+        	text-align: center;
         }
+
+        
         @keyframes baiduFe
 			{
 				0%   {left: 100px;}
@@ -445,17 +452,67 @@
         	height: 300px;
         	width: 150px;
         	position: absolute;
+        	background-color: #FFFFFF;
+        	left: 100px;
+        	text-align: center;
+
+        	-webkit-transition:all 0.5s; 
+    		-moz-transition:all 0.5s;
+    		-o-transition:all 0.5s;
+
+        }
+        #baiduFe:hover {
+        	
+        	/*z-index: 3;
+        	height: 300px;
+        	width: 150px;
+        	position: absolute;
         	background-color: blue;
         	left: 100px;
+        	text-align: center;
+        	transition-duration:0.5s;
+			box-shadow:0px 0px 10px #aaaaaa;*/
+			transition-duration:0.5s;
+			box-shadow:0px 0px 10px #aaaaaa;
+
+			-webkit-transform:scale(1.1) ; 
+    		-moz-transform:scale(1.1) ; 
+    		-o-transform:scale(1.1);
+
         }
+        
         #baiduFe1 {
         	animation: baiduFe 1s;
         	z-index: 0;
         	height: 300px;
         	width: 150px;
         	position: absolute;
-        	background-color: blue;
+        	background-color: #FFFFFF;
         	right: 10px;
+
+        	-webkit-transition:all 0.5s; 
+    		-moz-transition:all 0.5s;
+    		-o-transition:all 0.5s;
+        }
+
+        #baiduFe1:hover {
+        	
+        	/*z-index: 3;
+        	height: 300px;
+        	width: 150px;
+        	position: absolute;
+        	background-color: blue;
+        	left: 100px;
+        	text-align: center;
+        	transition-duration:0.5s;
+			box-shadow:0px 0px 10px #aaaaaa;*/
+			transition-duration:0.5s;
+			box-shadow:0px 0px 10px #aaaaaa;
+
+			-webkit-transform:scale(1.1) ; 
+    		-moz-transform:scale(1.1) ; 
+    		-o-transform:scale(1.1);
+
         }
         
         #ssm {
@@ -464,27 +521,70 @@
         	height: 300px;
         	width: 150px;
         	position: absolute;
-        	background-color: red;
+        	background-color: #FFFFFF;
         	left: 70px;
+
+        	-webkit-transition:all 0.5s; 
+    		-moz-transition:all 0.5s;
+    		-o-transition:all 0.5s;
         }
+        #ssm:hover {
+        	
+        	/*z-index: 3;
+        	height: 300px;
+        	width: 150px;
+        	position: absolute;
+        	background-color: blue;
+        	left: 100px;
+        	text-align: center;
+        	transition-duration:0.5s;
+			box-shadow:0px 0px 10px #aaaaaa;*/
+			transition-duration:0.5s;
+			box-shadow:0px 0px 10px #aaaaaa;
+
+			-webkit-transform:scale(1.1) ; 
+    		-moz-transform:scale(1.1) ; 
+    		-o-transform:scale(1.1);
+
+        }
+        #ssm1:hover {
+        	transition-duration:0.5s;
+			box-shadow:0px 0px 10px #aaaaaa;
+
+			-webkit-transform:scale(1.1) ; 
+    		-moz-transform:scale(1.1) ; 
+    		-o-transform:scale(1.1);
+        }
+
+
         #ssm1 {
         	animation: ssm 1s;
         	z-index: 1;
         	height: 300px;
         	width: 150px;
         	position: absolute;
-        	background-color: red;
+        	background-color: #FFFFFF;
         	right: 40px;
+
+        	-webkit-transition:all 0.5s; 
+    		-moz-transition:all 0.5s;
+    		-o-transition:all 0.5s;
         }
+
         #android {
         	animation: android1 1s;
         	z-index: 1;
         	height: 300px;
         	width: 150px;
         	position: absolute;
-        	background-color: blue;
+        	background-color: #FFFFFF;
         	left: 40px;
+
+        	-webkit-transition:all 0.5s; 
+    		-moz-transition:all 0.5s;
+    		-o-transition:all 0.5s;
         }
+
 
 		       
         #psec {
@@ -493,8 +593,12 @@
         	height: 300px;
         	width: 150px;
         	position: absolute;
-        	background-color: green;
+        	background-color: #FFFFFF;
         	left: 10px;
+
+        	-webkit-transition:all 0.5s; 
+    		-moz-transition:all 0.5s;
+    		-o-transition:all 0.5s;
         }
         #android1 {
         	animation: android 1s;
@@ -502,8 +606,12 @@
         	height: 300px;
         	width: 150px;
         	position: absolute;
-        	background-color: blue;
+        	background-color: #FFFFFF;
         	right: 70px;
+
+        	-webkit-transition:all 0.5s; 
+    		-moz-transition:all 0.5s;
+    		-o-transition:all 0.5s;
         }
         #psec1 {
         	animation: psec 1s;
@@ -511,10 +619,59 @@
         	height: 300px;
         	width: 150px;
         	position: absolute;
-        	background-color: green;
+        	background-color: #FFFFFF;
         	right: 100px;
+
+        	-webkit-transition:all 0.5s; 
+    		-moz-transition:all 0.5s;
+    		-o-transition:all 0.5s;
         }
 
+        #android:hover {
+        	transition-duration:0.5s;
+			box-shadow:0px 0px 10px #aaaaaa;
+
+			-webkit-transform:scale(1.1) ; 
+    		-moz-transform:scale(1.1) ; 
+    		-o-transform:scale(1.1);
+        }
+        #android1:hover {
+        	transition-duration:0.5s;
+			box-shadow:0px 0px 10px #aaaaaa;
+
+			-webkit-transform:scale(1.1) ; 
+    		-moz-transform:scale(1.1) ; 
+    		-o-transform:scale(1.1);
+        }
+        #psec:hover {
+        	transition-duration:0.5s;
+			box-shadow:0px 0px 10px #aaaaaa;
+
+			-webkit-transform:scale(1.1) ; 
+    		-moz-transform:scale(1.1) ; 
+    		-o-transform:scale(1.1);
+        }
+        #psec1:hover {
+        	transition-duration:0.5s;
+			box-shadow:0px 0px 10px #aaaaaa;
+
+			-webkit-transform:scale(1.1) ; 
+    		-moz-transform:scale(1.1) ; 
+    		-o-transform:scale(1.1);
+        }
+
+		#Btitle {
+			position: relative;
+			text-align: center;
+		}
+		#Btitle span {
+			font-size: 26px;
+			color: #333333;
+			font-weight: 900;
+		}
+		/*#fristSpan {
+			display: "";
+		}*/
         /*contactMe*/
         #contact_items {
         	margin: 0 auto;
@@ -530,7 +687,7 @@
         #contact_me {
         	margin: 0 auto;
         	position: relative;
-        	right: 100px;
+        	
         	
         	width: 100px;
         	font-weight: 900;
@@ -564,7 +721,7 @@
 <div id="container">
     <div class="section" id="section0">
     	<div id="part1">
-    		<span style="font-size: 16px;color: grey;text-align: left;">距离你出生已经过去了  </span>
+    		<span style="font-size: 16px;color: grey;text-align: left;">你已经出生了  </span>
     		<div id="myAge">
 				
     			<div id="year">年</div>
@@ -606,7 +763,7 @@
     <div class="section" id="section2">
     	
     	<div id="part3">
-    		<div>这里是一些练手的小项目，比如待办？</div>
+    		<div class="title">这里是一些练手的小项目，比如待办？</div>
     		<br>
     		
     		<input type="text" id="content"> 
@@ -616,27 +773,46 @@
 		        <li>面试准备 <span>Done</span><span>Delete</span></li>
 		        
 	    	</ul>
-	    	<div>京东首页也写过</div>
-	    	<img src="">
-	    	<a href="https://turing97.github.io/JD/">预览地址：https://turing97.github.io/JD/</a>
-
+	    	<div class="title" style="float: left; height: 40px;">京东首页?---> </div>
+	    	
+	    	<div style="line-height: 40px;"><a href="https://turing97.github.io/JD/">预览地址</a></div>
+			<div class="title" style="clear: both;">这里还有一些：</div>
 	    	<div id="wid">
-	    		<div id="baiduFe">	
-	    		baiduFe
+	    		<div id="baiduFe" >	
+	    		<img src="baiduFe.png" style="height: 60%; widows: 60%; margin: 0 auto;">
+	    		<img src="jd.png" style="height: 25%; widows: 25%;">
+	    		
 	    		</div>
+
 	    		<div id="ssm">
-	    		SSm
+	    		<img src="loginSSm.png"style="height: 30%; widows: 30%;">
+	    		<img src="controlSSM.png" style="height: 15%; widows: 15%;">
+	    		
 	    		</div>
+
 	    		<div id="android">
-	    			android
+	    		<img src="android1.png"style="height: 45%; widows: 45%;">
+	    		<img src="android2.png" style="height: 45%; widows: 45%;">
+	    		<br>
+	    		
 	    		</div>
+
 	    		<div id="psec">
-	    			
+	    		<img src="ReactLogin.png"style="height: 30%; widows: 30%;">
+	    		<img src="successLogin.png" style="height: 25%; widows: 25%;">
+	    		
 	    		</div>
-
-
+	    		
+				
+				
 	    	</div>
-	    	<div>GitHub--><a href=https://github.com/Turing97?tab=repositories"></a></div>
+	    	<div  id="Btitle" >
+	    		<span id="fristSpan">一些前端练习</span>
+				<span style="display: none;">SSM管理系统</span>
+				<span style="display: none;">安卓小练习</span>
+				<span style="display: none;">React学习</span>
+	    	</div>
+	    	<div style="margin: 0 auto;text-align: center;padding-top: 10px;"><a href="https://github.com/Turing97?tab=repositories">GitHub了解更多--></a></div>
 			
   
     	</div>
@@ -653,10 +829,11 @@
     			<div class="details">兴趣广泛，面对新鲜事物永远充满激情</div>
     		</div>
     		<div id="contact_me">联系我：</div>
+    		<br>
     		<div id="contact_items">
-    			<div>github</div>
+    			<div><a href="https://github.com/Turing97">Github</a></div>
     			<div>TEL:17781147006</div>
-    			<div>Mail：1659122607@qq.com</div>
+    			<div><a href="">Mail：1659122607@qq.com</a></div>
     		</div>
     	</div>
 
@@ -901,6 +1078,7 @@
         //what i did
         var wid = document.querySelector("#wid");
         var widDivs = document.querySelectorAll("#wid div");
+        var BtitleDivs = document.querySelectorAll("#Btitle span");
         wid.onclick = function() {
         	console.log("this is wid")
         	console.log(widDivs)
@@ -911,35 +1089,66 @@
         	if(e.target.id === "baiduFe") {
         		console.log("now you click baiduFe")
         		e.target.setAttribute("id","baiduFe1");
+        		BtitleDivs[0].style.display = "";
+        		BtitleDivs[1].style.display = "none";
+        		BtitleDivs[2].style.display = "none";
+        		BtitleDivs[3].style.display = "none";
         		
         	}else if(e.target.id === "ssm") {
         		console.log("now you click ssm")
         		e.target.setAttribute("id","ssm1");
-        		
+        		BtitleDivs[0].style.display = "none";
+        		BtitleDivs[1].style.display = "";
+        		BtitleDivs[2].style.display = "none";
+        		BtitleDivs[3].style.display = "none";
         	}else if(e.target.id === "android") {
         		console.log("now you click baiduFe")
         		e.target.setAttribute("id","android1");
+        		BtitleDivs[0].style.display = "none";
+        		BtitleDivs[1].style.display = "none";
+        		BtitleDivs[2].style.display = "";
+        		BtitleDivs[3].style.display = "none";
         		
         	}else if(e.target.id === "psec") {
         		console.log("now you click baiduFe")
         		e.target.setAttribute("id","psec1");
+        		BtitleDivs[0].style.display = "none";
+        		BtitleDivs[1].style.display = "none";
+        		BtitleDivs[2].style.display = "none";
+        		BtitleDivs[3].style.display = "";
         		
         	}
         	else if(e.target.id === "baiduFe1") {
         		console.log("now you click baiduFe")
         		e.target.setAttribute("id","baiduFe");
+        		BtitleDivs[0].style.display = "";
+        		BtitleDivs[1].style.display = "none";
+        		BtitleDivs[2].style.display = "none";
+        		BtitleDivs[3].style.display = "none";
         		
         	}else if(e.target.id === "ssm1") {
         		console.log("now you click ssm")
         		e.target.setAttribute("id","ssm");
+        		BtitleDivs[0].style.display = "none";
+        		BtitleDivs[1].style.display = "";
+        		BtitleDivs[2].style.display = "none";
+        		BtitleDivs[3].style.display = "none";
         		
         	}else if(e.target.id === "android1") {
         		console.log("now you click baiduFe")
         		e.target.setAttribute("id","android");
+        		BtitleDivs[0].style.display = "none";
+        		BtitleDivs[1].style.display = "none";
+        		BtitleDivs[2].style.display = "";
+        		BtitleDivs[3].style.display = "none";
         		
         	}else if(e.target.id === "psec1") {
         		console.log("now you click baiduFe")
         		e.target.setAttribute("id","psec");
+        		BtitleDivs[0].style.display = "none";
+        		BtitleDivs[1].style.display = "none";
+        		BtitleDivs[2].style.display = "none";
+        		BtitleDivs[3].style.display = "";
         		
         	}
         
