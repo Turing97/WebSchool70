@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html>
+<head lang="ch">
+    <meta charset="UTF-8">
+    <meta name=”viewport” content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <title></title>
+    <style>
+        body, html{
+            padding: 0;
+            margin: 0;
+        }
+
+        body, html {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        #container, .section {
+            height: 100%;
+        }
+
+        .section {
+            background-color: #000;
+            background-size: cover;
+            background-position: 50% 50%;
+        }
+
+        #section0 {
+            background-color: #FFFACD;
+        }
+
+        #section1 {
+            background-color: #764d39;
+            margin: 0 auto;
+
+        }
+
+        #section2 {
+            background-color: #ff9000;
+        }
+
+        #section3 {
+            background-color: #380d31;
+        }
+        #part1 {
+		 	text-align: left;
+		 	padding-top:100px; 
+		 	padding-left: 100px;
+		 
+		 }
+		 #myAge {
+		 	height: 80px;
+		 	width: 150px;
+		 	overflow: hidden;
+		 	
+		 	padding: 0px;
+		 
+		 	
+		 }
+		 #year {
+		 	float: left;
+		 	height: 80px;
+		 	width: 50px;
+		 	font-size: 18px;
+		 	line-height: 60px;
+		 	color: grey;
+		 	font-weight:900;
+		 }
+		 #month,#date {
+		 	height: 20px;
+		 	font-size: 16px;
+		 	text-align:justify;
+		 	color: #BFEFFF;
+		 	font-weight:bold;
+		 	
+		 }
+		 #month:after {
+			display: inline-block ; 
+			content: '';
+			padding-left: 100%;
+		 }
+		 #date:after {
+			display: inline-block ; 
+			content: '';
+			padding-left: 100%;
+		 }
+
+		 #HMS {
+		 	display: flex;
+		 	width: 100px;
+		 }
+		 #hour,#min,#sec {
+		 	font-weight:bold;
+		 	height: 30px;
+		 	flex: 1;
+		 	line-height: 30px;
+		 	color: #969696;
+		 	font-size: 4px;
+
+		 }
+
+		 #part2 {
+			
+ 			margin: 0 auto;
+ 			margin-top: 50px;
+ 			height: 100px;
+ 		}
+
+ 		#part2 div{
+ 			
+ 			height: 300px;
+ 			background-color: #EEE8AA;
+ 			width: 60%;
+ 			margin: 0 auto;
+ 			text-align: center;
+ 			/*box-shadow:3px 3px #aaaaaa;*/
+
+ 		}
+		
+		#who:hover,#contact:hover,#resume:hover,#didbf:hover{
+			transition-duration:0.3s;
+			box-shadow:0px 0px 10px #aaaaaa;
+			color: #000;ursor: pointer;
+		}
+		#who h1 {
+			font-family: 华文行楷;
+			font-size: 50px;
+		}
+		#who h2 {
+			font-family: 华文新魏;
+			font-size: 30px;
+			color: #CDC0B0;
+			margin-bottom: 40px;
+		}
+		#who p {
+			font-family: 隶书;
+			text-decoration: none;
+			font-size: 20px;
+			color: #CDC0B0;
+		}
+		#who a {
+			text-decoration: none;
+			color: #CDC0B0;
+		}
+		#RES {
+			visibility:visible;
+		}
+		#WAI,#WID,#HTC{ 
+			visibility:hidden;
+	/*display: "none";*/
+	/*background-color: red;*/
+		}
+
+		#skills_content {
+			
+			
+			
+			
+			padding-left: 20%;
+			padding-top: 30%;
+
+			
+		}
+		#skills_content div {
+			width:fit-content;
+			height: 50px;
+			line-height: 50px;
+			
+			margin: 8px;
+			padding-right: 10px;
+			
+		}
+		#skills {
+			font-weight: bolder;
+			font-size: 20px;
+		}
+		#js {
+			overflow: hidden;
+			animation: myfirstRe 0.5s;
+			width: 80px;
+			height: 50px;
+			line-height: 50px;
+			background-color: #EE4000;
+			/*margin: 8px;*/
+			
+		}
+		@keyframes myfirst
+			{
+				0%   {width: 80px;}
+				
+				100% {width: 460px;}
+			}
+		@keyframes myfirstRe
+			{
+				0%   {width: 460px;}
+				
+				100% {width: 80px;}
+			}
+		#js:hover {
+			width: 460px;
+			overflow: hidden;
+			animation: myfirst 0.5s;
+			
+			height: 50px;
+			line-height: 50px;
+			background-color: #EE4000;
+			/*margin: 8px;*/
+			
+			transition-duration:0.5s;
+			box-shadow:0px 0px 10px #aaaaaa;
+		}
+
+		/*cs*/
+		#cs {
+			overflow: hidden;
+			animation: myfirstRe1 0.5s;
+			
+			height: 50px;
+			line-height: 50px;
+			background-color: #E066FF;
+			/*margin: 8px;*/
+			
+		}
+		@keyframes myfirst1
+			{
+				0%   {width: 50px;}
+				
+				100% {width: 400px;}
+			}
+		@keyframes myfirstRe1
+			{
+				0%   {width: 400px;}
+				
+				100% {width: 50px;}
+			}
+		#cs:hover {
+			
+			overflow: hidden;
+			animation: myfirst1 0.5s;
+			
+			height: 50px;
+			line-height: 50px;
+			background-color: #E066FF;
+			/*margin: 8px;*/
+			
+			transition-duration:0.5s;
+			box-shadow:0px 0px 10px #aaaaaa;
+		}
+
+		/*ht*/
+		#ht {
+			overflow: hidden;
+			animation: myfirstRe2 0.5s;
+			width: 50px;
+			height: 50px;
+			line-height: 50px;
+			background-color: #C1FFC1;
+			/*margin: 8px;*/
+			
+		}
+		@keyframes myfirst2
+			{
+				0%   {width: 50px;}
+				
+				100% {width: 430px;}
+			}
+		@keyframes myfirstRe2
+			{
+				0%   {width: 430px;}
+				
+				100% {width: 50px;}
+			}
+		#ht:hover {
+			
+			overflow: hidden;
+			animation: myfirst2 0.5s;
+			width: 430px;
+			height: 50px;
+			line-height: 50px;
+			background-color: #C1FFC1;
+			/*margin: 8px;*/
+			
+			transition-duration:0.5s;
+			box-shadow:0px 0px 10px #aaaaaa;
+		}
+		/*jq*/
+		#jq {
+			overflow: hidden;
+			animation: myfirstRe3 0.5s;
+			width: 50px;
+			height: 50px;
+			line-height: 50px;
+			background-color: #9F79EE;
+			/*margin: 8px;*/
+			
+		}
+		@keyframes myfirst3
+			{
+				0%   {width: 50px;}
+				
+				100% {width: 530px;}
+			}
+		@keyframes myfirstRe3
+			{
+				0%   {width: 530px;}
+				
+				100% {width: 50px;}
+			}
+		#jq:hover {
+			
+			overflow: hidden;
+			animation: myfirst3 1s;
+			width: 530px;
+			height: 50px;
+			line-height: 50px;
+			background-color: #9F79EE;
+			/*margin: 8px;*/
+			
+			transition-duration:0.5s;
+			box-shadow:0px 0px 10px #aaaaaa;
+		}
+		
+		.skills_sty {
+			/*animation-duration: 0.5s;
+			width:fit-content;
+			height: 50px;
+			line-height: 50px;
+			background-color: yellow;
+			margin: 8px;
+			padding-right: 10px;*/
+		}
+		
+
+		/*待办*/
+
+		#part3 {
+			padding-left: 50px;
+			padding-top: 50px;
+			
+		}
+
+ #todoList {
+            list-style: none;
+            margin:10px 0px;
+            padding:0;
+            width:600px;
+           
+        }
+        #todoList li {
+            margin-bottom:5px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background:#f5f5f5;
+            position: relative;
+        }
+        .style2 {
+        	text-decoration:line-through;
+        	background-color: red;
+        	
+        }
+        input {
+            padding:10px;
+            font-size:16px;
+            border:1px solid #ccc;
+        }
+        button {
+            padding:10px 20px;
+            border:1px solid #ccc;
+            background: #f5f5f5;
+            outline: none;
+            cursor: pointer;
+        }
+
+        #todoList span {
+           
+            float: right;
+            cursor: pointer;
+            margin-left: 10px;
+            color: green;
+        }
+
+        #wid {
+        	padding-top: 50px;
+        	margin: 0 auto;
+        	position: relative;
+        	
+        	height: 350px;
+        	width:600px;
+        }
+        @keyframes baiduFe
+			{
+				0%   {left: 100px;}
+				
+				100% {left: 440px;}
+			}
+		@keyframes ssm
+			{
+				0%   {left: 70px;}
+				
+				100% {left: 410px;}
+			}
+		@keyframes android
+			{
+				0%   {left: 40px;}
+				
+				100% {left: 380px;}
+			}
+		@keyframes psec
+			{
+				0%   {left: 10px;}
+				
+				100% {left: 350px;}
+			}
+
+			/*动画反向*/
+		@keyframes baiduFe1
+			{
+				0% {left: 440px;}
+				100%   {left: 100px;}
+				
+				
+			}
+		@keyframes ssm1
+			{
+				0%   {left: 410px;}
+				
+				100% {left: 70px;}
+			}
+		@keyframes android1
+			{
+				0%   {left: 380px;}
+				
+				100% {left: 40px;}
+			}
+		@keyframes psec1
+			{
+				0%   {left: 350px;}
+				
+				100% {left: 10px;}
+			}
+
+        #baiduFe {
+        	animation: baiduFe1 1s;
+        	z-index: 3;
+        	height: 300px;
+        	width: 150px;
+        	position: absolute;
+        	background-color: blue;
+        	left: 100px;
+        }
+        #baiduFe1 {
+        	animation: baiduFe 1s;
+        	z-index: 0;
+        	height: 300px;
+        	width: 150px;
+        	position: absolute;
+        	background-color: blue;
+        	right: 10px;
+        }
+        
+        #ssm {
+        	animation: ssm1 1s;
+        	z-index: 2;
+        	height: 300px;
+        	width: 150px;
+        	position: absolute;
+        	background-color: red;
+        	left: 70px;
+        }
+        #ssm1 {
+        	animation: ssm 1s;
+        	z-index: 1;
+        	height: 300px;
+        	width: 150px;
+        	position: absolute;
+        	background-color: red;
+        	right: 40px;
+        }
+        #android {
+        	animation: android1 1s;
+        	z-index: 1;
+        	height: 300px;
+        	width: 150px;
+        	position: absolute;
+        	background-color: blue;
+        	left: 40px;
+        }
+
+		       
+        #psec {
+        	animation: psec1 1s;
+        	z-index: 0;
+        	height: 300px;
+        	width: 150px;
+        	position: absolute;
+        	background-color: green;
+        	left: 10px;
+        }
+        #android1 {
+        	animation: android 1s;
+        	z-index: 2;
+        	height: 300px;
+        	width: 150px;
+        	position: absolute;
+        	background-color: blue;
+        	right: 70px;
+        }
+        #psec1 {
+        	animation: psec 1s;
+        	z-index: 3;
+        	height: 300px;
+        	width: 150px;
+        	position: absolute;
+        	background-color: green;
+        	right: 100px;
+        }
+
+        /*contactMe*/
+        #contact_items {
+        	margin: 0 auto;
+        	display: flex;
+        	width: 800px;
+        	height: 100px;
+        }
+        #contact_items div {
+        	flex: 1;
+        	height: 50px;
+        	
+        }
+        #contact_me {
+        	margin: 0 auto;
+        	position: relative;
+        	right: 100px;
+        	
+        	width: 100px;
+        	font-weight: 900;
+        	font-size: 20px;
+        	padding-top: 50px;
+        	font-family: 宋体;
+        }
+        #contact_content {
+        	padding-top: 200px;
+        	margin: 0 auto;
+        }
+        #contact_content div {
+
+        	text-align: center;
+        	margin: 0 auto;
+        }
+        .title {
+        	font-size: 30px;
+        	font-family: 隶书;
+        	color: white;
+
+        }
+        .details {
+        	font-family: 隶书;
+        	font-size: 20px;
+        	color: white;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div class="section" id="section0">
+    	<div id="part1">
+    		<span style="font-size: 16px;color: grey;text-align: left;">距离你出生已经过去了  </span>
+    		<div id="myAge">
+				
+    			<div id="year">年</div>
+    			<div id="ecsYear">
+    				<div id="month">月</div>
+    				<div id="date">日</div>
+    				<div id="HMS">
+    					<div id="hour">小时</div>
+		    			<div id="min">分钟</div>
+		    			<div id="sec">秒</div>
+    				</div>
+    			</div>
+    			
+    		</div>
+
+
+    		
+    		
+    	</div>
+   		<div id="part2">
+    		<div id="who">
+    			<h1>Hello，World</h1>
+    			<!-- <img src="E:\WebSchool70\OwnSit\tx.jpg"> -->
+    			<h2>你必须非常努力，才能看起来毫不费力</h2>
+    			<p>我叫涂鑫<br>一名准前端工程师</p>
+    			<a href="mailto:1659122607@qq.com" target="_blank"><span class="contact-link">1659122607@qq.com</span></a>
+    		</div>   		
+    	</div>
+    </div>
+    <div class="section" id="section1">
+    	<div id="skills_content">
+    		<div id="skills">能力</div>
+	    	<div id="js">JavaScript</div>
+	    	<div id="cs">CSS3</div>
+	    	<div id="ht">HTML</div>
+	    	<div id="jq">JQuery</div>
+    	</div>
+    </div>
+    <div class="section" id="section2">
+    	
+    	<div id="part3">
+    		<div>这里是一些练手的小项目，比如待办？</div>
+    		<br>
+    		
+    		<input type="text" id="content"> 
+		    <button id="btn">添加</button>
+
+		    <ul id="todoList">
+		        <li>面试准备 <span>Done</span><span>Delete</span></li>
+		        
+	    	</ul>
+	    	<div>京东首页也写过</div>
+	    	<img src="">
+	    	<a href="https://turing97.github.io/JD/">预览地址：https://turing97.github.io/JD/</a>
+
+	    	<div id="wid">
+	    		<div id="baiduFe">	
+	    		baiduFe
+	    		</div>
+	    		<div id="ssm">
+	    		SSm
+	    		</div>
+	    		<div id="android">
+	    			android
+	    		</div>
+	    		<div id="psec">
+	    			
+	    		</div>
+
+
+	    	</div>
+	    	<div>GitHub--><a href=https://github.com/Turing97?tab=repositories"></a></div>
+			
+  
+    	</div>
+    </div>
+    <div class="section" id="section3">
+    	<div id="contact_content">
+	    	<!-- <h1>这就是我</h1> -->
+    		<!-- <h2>活力四射，热爱探索</h2>
+    		<h2>兴趣广泛，面对新鲜事物永远充满激情</h2> -->
+    		<div>
+    			
+    			<div class="title">我叫涂鑫</div>
+    			<div class="details">活力四射，热爱探索</div>
+    			<div class="details">兴趣广泛，面对新鲜事物永远充满激情</div>
+    		</div>
+    		<div id="contact_me">联系我：</div>
+    		<div id="contact_items">
+    			<div>github</div>
+    			<div>TEL:17781147006</div>
+    			<div>Mail：1659122607@qq.com</div>
+    		</div>
+    	</div>
+
+
+    </div>
+</div>
+
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+    var curIndex = 0;
+    var container = $("#container");
+    var sumCount = $(".section").length;
+    var $window = $(window);
+    var duration = 500;
+    //时间控制
+    var aniTime = 0;
+
+    var scrollFunc = function (e) {
+        //如果动画还没执行完，则return
+        if(new Date().getTime() < aniTime + duration){
+            return;
+        }
+        e = e || window.event;
+        var t = 0;
+        if (e.wheelDelta) {//IE/Opera/Chrome
+            t = e.wheelDelta;
+            if (t > 0 && curIndex > 0) {
+                //上滚动
+                movePrev();
+            } else if (t < 0 && curIndex < sumCount - 1) {
+                //下滚动
+                moveNext();
+            }
+        } else if (e.detail) {//Firefox
+            t = e.detail;
+            if (t < 0 && curIndex > 0) {
+                //上滚动
+                movePrev();
+            } else if (t > 0 && curIndex < sumCount - 1) {
+                //下滚动
+                moveNext();
+            }
+        }
+    };
+
+    function moveNext(){
+        //获取动画开始时的时间
+        aniTime = new Date().getTime();
+        container.css("transform", "translate3D(0, -" + (++curIndex) * $window.height() + "px, 0)");
+    }
+
+    function movePrev(){
+        //获取动画开始时的时间
+        aniTime = new Date().getTime();
+        container.css("transform", "translate3D(0, -" + (--curIndex) * $window.height() + "px, 0)");
+    }
+
+    function init(){
+        /*注册事件*/
+        if (document.addEventListener) {
+            document.addEventListener('DOMMouseScroll', scrollFunc, false);
+        }//W3C
+        window.onmousewheel = document.onmousewheel = scrollFunc;//IE/Opera/Chrome
+
+        container.css({
+            "transition": "all 0.5s",
+            "-moz-transition": "all 0.5s",
+            "-webkit-transition": "all 0.5s"
+        });
+    }
+
+    init();
+
+    //倒计时
+    setInterval(function(){
+				var fulldate = new Date();
+				var year = fulldate.getFullYear();
+				var month = fulldate.getMonth()+1;
+				var date = fulldate.getDate();
+				var day = fulldate.getDay();
+				var hour = fulldate.getHours();
+				var min = fulldate.getMinutes();
+				var sec = fulldate.getSeconds();
+				
+
+				var set_year = 1997;
+				var set_month = 10;
+				var set_date =10;
+				var set_hours = 12;
+				var set_minite  = 22;
+				var set_seconds = 11;
+				var set_day = (new Date(set_year,set_month-1,set_date,set_hours,set_minite,set_seconds)).getDay();
+				var totalS =fulldate-( new Date(set_year,set_month-1,set_day,set_hours,set_minite,set_seconds))
+				
+				var year_res = parseInt(totalS / 1000 / 60 / 60 / 24 / 365, 10), //计算过去的年份
+				day_res = parseInt(totalS / 1000 / 60 / 60 / 24 % 365, 10),//计算剩余的天数
+				month_res = getMonth1(day_res);
+				day_res1 = getDay1(day_res);
+				hour_res = parseInt(totalS / 1000 / 60 / 60 % 24, 10),//计算剩余的小时数,
+				minites_res = parseInt(totalS / 1000 / 60 % 60, 10),//计算剩余的分钟数,
+				seconds_res = parseInt(totalS / 1000 % 60, 10);//计算剩余的秒数 ;
+				day_res = checkTime(day_res);
+				hour_res = checkTime(hour_res);
+				minites_res = checkTime(minites_res);
+				seconds_res = checkTime(seconds_res);
+				
+				
+				var weekDay = ["星期天","星期一","星期二","星期三","星期四","星期五","星期六"]
+				if(totalS >= 0){
+					// document.querySelector("#result-wrapper").innerHTML = "现在距离"+set_year+"年"+set_month+"月"+set_date+"日"+weekDay[set_day]+","+set_hours+"小时"+set_minite+"分钟"+set_minite+"秒 还有"+day_res+"天 "+hour_res+"小时"+minites_res+"分"+seconds_res+"秒";
+					document.querySelector("#year").innerHTML = year_res+"年";
+					document.querySelector("#month").innerHTML =month_res+"个月";
+					document.querySelector("#date").innerHTML = day_res1+"天";
+					document.querySelector("#hour").innerHTML = hour_res+"小时";
+					document.querySelector("#min").innerHTML = minites_res+"分钟";
+					document.querySelector("#sec").innerHTML = seconds_res+"秒啦";
+				}
+				else {
+					document.querySelector("#result-wrapper").innerHTML = "现在距离"+set_year+"年"+set_month+"月"+set_date+"日"+weekDay[set_day]+","+set_hours+"小时"+set_minite+"分钟"+set_minite+"秒 已经过去"+(-day_res)+"天 "+(-hour_res)+"小时"+(-minites_res)+"分"+(-seconds_res)+"秒";
+					var ressadsa = year-set_year;
+					document.querySelector("#year").innerHTML = "nihao"+ (-year_res);
+					document.querySelector("#month").innerHTML = "nihao"+ (month_res);
+					document.querySelector("#year").innerHTML = "nihao"+ (-year_res);
+					document.querySelector("#year").innerHTML = "nihao"+ (-year_res);
+					document.querySelector("#year").innerHTML = "nihao"+ (-year_res);
+					document.querySelector("#year").innerHTML = "nihao"+ (-year_res);
+				}
+				
+			},1000)
+
+		function checkTime(i)        
+           {        
+              if (i < 10 && i>=0) {        
+                  i = "0" + i;        
+               }        
+              return i;   
+          }
+        function getMonth1(day){
+        	var StableMonth = [31,22,31,30,31,30,31,31,30,31,30,31];
+        	var res = 1,
+        		count = 0;
+        	while(day>StableMonth[count]){
+        		day -= StableMonth[count];
+        		res++;
+        		count++;
+        	}
+        	return res
+        }
+        function getDay1(day){
+        	var StableMonth = [31,22,31,30,31,30,31,31,30,31,30,31];
+        	var res = 1,
+        		count = 0;
+        	while(day>StableMonth[count]){
+        		day -= StableMonth[count];
+        		res++;
+        		count++;
+        	}
+        	return day;
+
+
+        }
+
+        //skills_content
+        var skills_contentDivs = document.querySelectorAll("#skills_content div");
+        var skills_content = document.querySelector("#skills_content");
+        skills_content.onmouseover = function(e) {
+        	if(e.target.id ==="js"){
+        		console.log("this is if ")
+        		e.target.innerHTML = "JavaScript  :  "+"了解JavaScript各种使用方式，能够做出简单的脚本功能"
+        		// e.target.className = "skills_sty";
+        	}
+        	else if(e.target.id ==="cs") {
+        		e.target.innerHTML = "CSS3  :  "+"掌握CSS用法，能够借助纯CSS做出不少动画效果"
+        	}
+        	else if(e.target.id ==="ht") {
+        		e.target.innerHTML = "HTML  :  "+"熟练使用各种HTML标签，能够设计实现复杂页面"
+        	}
+        	else if(e.target.id ==="jq") {
+        		e.target.innerHTML = "Jquery  :  "+"了解Jquery，能够借助类库实现交互功能，提高性能和开发效率"
+        	}
+        }
+        skills_content.onmouseout = function(e) {
+        	if(e.target.id ==="js"){
+        		console.log("this is if ")
+        		e.target.innerHTML = "JavaScript"
+        		// e.target.className = "skills_sty";
+        	}else if(e.target.id ==="cs") {
+        		e.target.innerHTML = "CSS3"
+        	}
+        	else if(e.target.id ==="ht") {
+        		e.target.innerHTML = "HTML"
+        	}
+        	else if(e.target.id ==="jq") {
+        		e.target.innerHTML = "Jquery"
+        	}
+        }
+
+        //待办等等
+        var input = document.querySelector('#content');
+        var btn = document.querySelector('#btn');
+        var todoList= document.querySelector('#todoList');
+        var spans = document.querySelectorAll('#todoList span');
+        btn.onclick = function(){
+            //获取 input的内置
+            var text = input.value;
+
+            //创建li元素 并给li元素添加包裹 内容
+            var li = document.createElement('li');
+            li.innerText = text;
+            var span = document.createElement('span');
+            span.innerHTML = "Delete";
+
+            li.appendChild(span);
+            var span = document.createElement('span');
+            span.innerHTML = "Done";
+            li.appendChild(span);
+
+            //把li元素添加到ul中
+            todoList.appendChild(li);
+        }    
+
+
+        /*spans.forEach(function(span){
+            span.onclick = function(){
+                todoList.removeChild(this.parentNode)
+            }
+        })*/
+
+        //委派方式绑定
+        todoList.onclick = function(event) {
+            if (event.target.nodeName === 'SPAN' && event.target.innerHTML === "Delete") {
+                this.removeChild(event.target.parentNode);
+            }
+            else if (event.target.nodeName === 'SPAN' && event.target.innerHTML === "Done") {
+            	
+                event.target.parentNode.className = "style2";
+            }
+        }
+
+
+        //what i did
+        var wid = document.querySelector("#wid");
+        var widDivs = document.querySelectorAll("#wid div");
+        wid.onclick = function() {
+        	console.log("this is wid")
+        	console.log(widDivs)
+        }
+        
+        wid.onclick = function(e) {
+        	
+        	if(e.target.id === "baiduFe") {
+        		console.log("now you click baiduFe")
+        		e.target.setAttribute("id","baiduFe1");
+        		
+        	}else if(e.target.id === "ssm") {
+        		console.log("now you click ssm")
+        		e.target.setAttribute("id","ssm1");
+        		
+        	}else if(e.target.id === "android") {
+        		console.log("now you click baiduFe")
+        		e.target.setAttribute("id","android1");
+        		
+        	}else if(e.target.id === "psec") {
+        		console.log("now you click baiduFe")
+        		e.target.setAttribute("id","psec1");
+        		
+        	}
+        	else if(e.target.id === "baiduFe1") {
+        		console.log("now you click baiduFe")
+        		e.target.setAttribute("id","baiduFe");
+        		
+        	}else if(e.target.id === "ssm1") {
+        		console.log("now you click ssm")
+        		e.target.setAttribute("id","ssm");
+        		
+        	}else if(e.target.id === "android1") {
+        		console.log("now you click baiduFe")
+        		e.target.setAttribute("id","android");
+        		
+        	}else if(e.target.id === "psec1") {
+        		console.log("now you click baiduFe")
+        		e.target.setAttribute("id","psec");
+        		
+        	}
+        
+        }
+
+        
+
+
+</script>
+</body>
+</html>

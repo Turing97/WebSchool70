@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+	<input type="button" name="dsafd" id="getAjaxBtn" value="发送ajax请求">
+	<button id="getAjaxBtn1">点击</button>
+	<script type="text/javascript">
+		(() => {
+  // 获取页面上需要发请求的按钮
+  let btn = document.querySelector('#getAjaxBtn1'); 
+  // 添加事件
+  btn.addEventListener('click', createXHR)
+  // 我们ajax的主体函数
+  function createXHR() {
+    // new一个XMLHttpRequest实例
+    var xhr = new XMLHttpRequest();
+    // 第一步使用open方法，接收三个参数
+    // 第一个参数是请求方法名（get，post等）
+    // 第二个参数是需要请求的接口地址
+    // 第三个参数是设置请求是否是异步，一般都是都是发送异步请求，同步请求可能会阻塞页面
+    // 我们先来看同步请求
+    xhr.open('get', '/api/get', false);
+    // open方法只是设置参数，并不会发送请求
+    // 而请求是由send()方法发送的，并且接收一个参数，就是需要发送到服务端的数据
+    // 如果没有需要发送到服务端的数据，必须传入null，因为有些浏览器不许要这个参数
+    xhr.send(null)
+  }
+
+})()
+
+
+
+	</script>
+    
+</body>
+</html>

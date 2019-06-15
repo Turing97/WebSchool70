@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<link href="minCss.css" rel="stylesheet" text="text/css">
+<link rel="stylesheet" href="./css/iconfont.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div id="Main">
+    	<div id="part1">
+    		<span style="font-size: 16px;color: grey;text-align: left;">距离你出生已经过去了  </span>
+    		<div id="myAge">
+				
+    			<div id="year">年</div>
+    			<div id="ecsYear">
+    				<div id="month">月</div>
+    				<div id="date">日</div>
+    				<div id="HMS">
+    					<div id="hour">小时</div>
+		    			<div id="min">分钟</div>
+		    			<div id="sec">秒</div>
+    				</div>
+    			</div>
+    			
+    		</div>
+    		
+    		
+    	</div>
+    	<div id="part3">
+    		<p style="font-size: 16px;color: grey;">亲，请查看并且编辑你的待办事宜</p>
+    		<input type="text" id="content"> 
+		    <button id="btn">添加</button>
+
+		    <ul id="todoList">
+		        <li>面试准备 <span>Done</span><span>Delete</span></li>
+		        
+	    	</ul>
+    	</div>
+
+    	<div id="part2">
+    		<div id="who">
+    			<div>
+    				
+    			</div>
+    		</div>
+    		<div id="contact">HOW TO CONTACT</div>
+    		<div id="didbf">WHAT I DID</div>
+    		<div id="resume">
+    			THIS IS RESUME
+    			<a href="http://www.baidu.com">hkhkj</a>
+    		</div>
+    	</div>
+    	
+    	<div id="part2_content">
+    		<div id="RES">
+					
+
+    		</div>
+    		<div id="WAI">this is WAI part</div>
+	    	<div id="HTC">this is HTC part</div>
+	    	<div id="WID">this is WID part</div>
+	    	
+    	</div>
+    </div>
+    <script type="text/javascript">
+		setInterval(function(){
+				var fulldate = new Date();
+				var year = fulldate.getFullYear();
+				var month = fulldate.getMonth()+1;
+				var date = fulldate.getDate();
+				var day = fulldate.getDay();
+				var hour = fulldate.getHours();
+				var min = fulldate.getMinutes();
+				var sec = fulldate.getSeconds();
+				
+
+				var set_year = 1997;
+				var set_month = 10;
+				var set_date =10;
+				var set_hours = 12;
+				var set_minite  = 22;
+				var set_seconds = 11;
+				var set_day = (new Date(set_year,set_month-1,set_date,set_hours,set_minite,set_seconds)).getDay();
+				var totalS =fulldate-( new Date(set_year,set_month-1,set_day,set_hours,set_minite,set_seconds))
+				
+				var year_res = parseInt(totalS / 1000 / 60 / 60 / 24 / 365, 10), //计算过去的年份
+				day_res = parseInt(totalS / 1000 / 60 / 60 / 24 % 365, 10),//计算剩余的天数
+				month_res = getMonth1(day_res);
+				day_res1 = getDay1(day_res);
+				hour_res = parseInt(totalS / 1000 / 60 / 60 % 24, 10),//计算剩余的小时数,
+				minites_res = parseInt(totalS / 1000 / 60 % 60, 10),//计算剩余的分钟数,
+				seconds_res = parseInt(totalS / 1000 % 60, 10);//计算剩余的秒数 ;
+				day_res = checkTime(day_res);
+				hour_res = checkTime(hour_res);
+				minites_res = checkTime(minites_res);
+				seconds_res = checkTime(seconds_res);
+				
+				
+				var weekDay = ["星期天","星期一","星期二","星期三","星期四","星期五","星期六"]
+				if(totalS >= 0){
+					// document.querySelector("#result-wrapper").innerHTML = "现在距离"+set_year+"年"+set_month+"月"+set_date+"日"+weekDay[set_day]+","+set_hours+"小时"+set_minite+"分钟"+set_minite+"秒 还有"+day_res+"天 "+hour_res+"小时"+minites_res+"分"+seconds_res+"秒";
+					document.querySelector("#year").innerHTML = year_res+"年";
+					document.querySelector("#month").innerHTML =month_res+"个月";
+					document.querySelector("#date").innerHTML = day_res1+"天";
+					document.querySelector("#hour").innerHTML = hour_res+"小时";
+					document.querySelector("#min").innerHTML = minites_res+"分钟";
+					document.querySelector("#sec").innerHTML = seconds_res+"秒啦";
+				}
+				else {
+					document.querySelector("#result-wrapper").innerHTML = "现在距离"+set_year+"年"+set_month+"月"+set_date+"日"+weekDay[set_day]+","+set_hours+"小时"+set_minite+"分钟"+set_minite+"秒 已经过去"+(-day_res)+"天 "+(-hour_res)+"小时"+(-minites_res)+"分"+(-seconds_res)+"秒";
+					var ressadsa = year-set_year;
+					document.querySelector("#year").innerHTML = "nihao"+ (-year_res);
+					document.querySelector("#month").innerHTML = "nihao"+ (month_res);
+					document.querySelector("#year").innerHTML = "nihao"+ (-year_res);
+					document.querySelector("#year").innerHTML = "nihao"+ (-year_res);
+					document.querySelector("#year").innerHTML = "nihao"+ (-year_res);
+					document.querySelector("#year").innerHTML = "nihao"+ (-year_res);
+				}
+				
+			},1000)
+
+		function checkTime(i)        
+           {        
+              if (i < 10 && i>=0) {        
+                  i = "0" + i;        
+               }        
+              return i;   
+          }
+        function getMonth1(day){
+        	var StableMonth = [31,22,31,30,31,30,31,31,30,31,30,31];
+        	var res = 1,
+        		count = 0;
+        	while(day>StableMonth[count]){
+        		day -= StableMonth[count];
+        		res++;
+        		count++;
+        	}
+        	return res
+        }
+        function getDay1(day){
+        	var StableMonth = [31,22,31,30,31,30,31,31,30,31,30,31];
+        	var res = 1,
+        		count = 0;
+        	while(day>StableMonth[count]){
+        		day -= StableMonth[count];
+        		res++;
+        		count++;
+        	}
+        	return day;
+
+
+        }
+
+        //待办等等
+        var input = document.querySelector('#content');
+        var btn = document.querySelector('#btn');
+        var todoList= document.querySelector('#todoList');
+        var spans = document.querySelectorAll('#todoList span');
+        btn.onclick = function(){
+            //获取 input的内置
+            var text = input.value;
+
+            //创建li元素 并给li元素添加包裹 内容
+            var li = document.createElement('li');
+            li.innerText = text;
+            var span = document.createElement('span');
+            span.innerHTML = "Delete";
+
+            li.appendChild(span);
+            var span = document.createElement('span');
+            span.innerHTML = "Done";
+            li.appendChild(span);
+
+            //把li元素添加到ul中
+            todoList.appendChild(li);
+        }    
+
+
+        /*spans.forEach(function(span){
+            span.onclick = function(){
+                todoList.removeChild(this.parentNode)
+            }
+        })*/
+
+        //委派方式绑定
+        todoList.onclick = function(event) {
+            if (event.target.nodeName === 'SPAN' && event.target.innerHTML === "Delete") {
+                this.removeChild(event.target.parentNode);
+            }
+            else if (event.target.nodeName === 'SPAN' && event.target.innerHTML === "Done") {
+            	
+                event.target.parentNode.className = "style2";
+            }
+        }
+
+        //中间部分四个板块
+        var part2 = document.querySelector("#part2");
+        var part2Divs = document.querySelectorAll("#part2_content div")
+        part2.onmouseover = function(event) {
+        	
+        	if(event.target.id ==="who"){
+        		console.log("this is who")
+        	}else if(event.target.id ==="contact"){
+        		console.log("this is contact")
+        	}
+        }
+        part2.onclick = function(event) {
+        	
+        	if(event.target.id ==="who"){
+        		part2Divs[1].style.visibility="visible"; 
+        		part2Divs[0].style.display = "none";
+        		part2Divs[1].style.display = "";
+        		part2Divs[2].style.display = "none";
+        		part2Divs[3].style.display = "none";
+        		        		
+        	}else if(event.target.id ==="contact"){
+        		part2Divs[2].style.visibility="visible"; 
+        		part2Divs[0].style.display = "none";
+        		part2Divs[1].style.display = "none";
+        		part2Divs[2].style.display = "";
+        		part2Divs[3].style.display = "none";	
+        	}else if(event.target.id ==="didbf"){
+        		part2Divs[3].style.visibility="visible"; 
+        		part2Divs[0].style.display = "none";
+        		part2Divs[1].style.display = "none";
+        		part2Divs[2].style.display = "none";
+        		part2Divs[3].style.display = "";        		
+        	}else if(event.target.id ==="resume"){     		
+        		
+				part2Divs[0].style.visibility="visible"; 
+        		part2Divs[0].style.display = "";
+        		part2Divs[1].style.display = "none";
+        		part2Divs[2].style.display = "none";
+        		part2Divs[3].style.display = "none";        		
+        	}
+        }
+    </script>
+</body>
+</html>

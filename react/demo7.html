@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="build/react.development.js"></script>
+<script src="build/react-dom.development.js"></script>
+<script src="build/babel.min.js"></script>
+<script src="build/prop-types.js"></script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+	<div id="example"></div>
+	<script type="text/babel">
+		class MyComponent extends React.Component {
+			constructor(props) {
+				super(props);
+				this.myTextInput = React.createRef();
+				this.handleClick = this.handleClick.bind(this)
+		}
+		handleClick() {
+			this.myTextInput.current.focus();
+	}
+		render() {
+			return (
+				<div>
+					<input type="text" ref={this.myTextInput} />
+					<input type="button" value="Focus the text input" onClick={this.handleClick} />
+				</div>
+			);
+	}
+	}
+	ReactDOM.render(
+		<MyComponent />,
+
+		document.getElementById('example')
+	)
+	</script>
+    
+</body>
+</html>
