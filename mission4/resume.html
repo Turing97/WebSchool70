@@ -12,8 +12,10 @@
 <body>
 	<div id="total">
 		<div id="left">
-			<div class="title_banner">
-				<h2>简历</h2>
+			<div>
+				<div class="title_banner">
+					<h2>简历</h2>
+				</div>
 			</div>
 		</div>
 		
@@ -110,9 +112,17 @@
 				alert("上午好");
 			}
 		}
+
+
 		function hobby() {
 			console.log("鸡你太美！！！！")
 			// body...
+		}
+
+		var idtest = document.getElementById("left");
+		idtest.onclick = function() {
+			console.log("click")
+			this.removeAttribute('id');
 		}
 
 		
